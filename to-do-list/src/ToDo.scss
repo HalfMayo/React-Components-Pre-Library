@@ -1,0 +1,337 @@
+@import '../../variables';
+
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.app {
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $surface-light;
+    height: auto;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+p {
+    font-size: $title-small-font-size;
+    transform: none;
+}
+
+.navigateLists {
+    position: sticky;
+    top: 0;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $padding;
+    background-color: $surface-light;
+    width: 100%;
+    height: $touch-element-size;
+    border-bottom: 1px solid $surface-variant;
+
+    button {
+        background-color: transparent;
+        border: none;
+        height: 48px;
+        color: $on-surface-variant-light;
+        font-size: $title-small-font-size;
+        line-height: $title-small-line-height;
+        font-weight: $title-small-font-weight;
+    }
+
+    .active {
+        padding-top: 3px;
+        padding-bottom: 0px;
+        color: $color-primary-light;
+        border-bottom: 3px solid $color-primary-light;
+    }
+}
+
+.checklist {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    list-style: none;
+    padding: 0;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+}
+
+.title {
+    border: none;
+    background-color: $surface-light;
+    width: calc(100% - 48px);
+    height: 60px;
+    padding: $padding;
+    font-size: $title-xxl-font-size;
+    line-height: $title-xxl-line-height;
+    margin-top: $half-padding;
+}
+
+.submit, .submitTitle {
+    border: none;
+    background-color: $surface-light;
+    width: $touch-element-size;
+    height: 72px;
+    padding: 6px;
+}
+
+.submitTitle {
+    margin-top: $half-padding;
+}
+
+.saved-bg {
+    fill: $color-primary-light;
+}
+.saved-tick {
+    fill: $color-on-primary-light;
+}
+
+.submit {
+    background-color: $surface-container-light;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}
+
+.checkbox-container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding: $less-padding;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkbox {
+    position: absolute;
+    top: 0;
+    left: 2px;
+    height: 18px;
+    width: 18px;
+    background-color: $surface-light;
+    border: 2px solid $outline-light;
+    border-radius: 2px;
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+.checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .checkbox-container input:checked ~ .checkbox:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .checkbox-container .checkbox:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+form {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    padding-left: $padding;
+    padding-right: $padding;
+}
+
+textarea {
+    width: calc(100% - 48px);
+    height: 72px;
+    border: none;
+    background-color: $surface-container-light;
+    padding: $less-padding;
+    font-family: 'Roboto', sans-serif;
+    resize: none;
+    margin: 0;
+
+}
+
+.edit {
+    display: flex;
+    padding: 0;
+
+}
+
+.item-to-do {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    width: 100%;
+    color: black;
+    padding: $padding;
+}
+
+.text {
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    width: 100%;
+    padding: 0;
+}
+
+.item-done {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+    width: 100%;
+    padding: $less-padding;
+    background-color: transparent;
+    color: grey;
+
+    p {
+        margin: 0;
+        padding: $less-padding;
+    }
+}
+
+p, .task {
+    word-wrap: break-word;
+}
+
+.task {
+        margin: 0;
+        padding: $less-padding;
+        font-size: $title-small-font-size;
+}
+
+.show {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    top: calc(50% - 40px);
+    left: calc(50% - 72px);
+
+    button {
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        background-color: $surface-variant;
+        border-radius: 50%;
+        border: none;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.overlay {
+    position: absolute;
+    z-index: 5;
+    width: 376px;
+    height: 100%;
+    background-color: $surface-light;
+    opacity: 90%;
+}
+
+.path-color {
+    fill: $color-primary-light;
+}
+
+.active-actions {
+    position: sticky;
+    bottom: 0;
+    background-color: $surface-container-light;
+    width: 400px;
+    padding: $more-padding;
+
+    p {
+        margin: 0;
+    }
+}
+
+.completed-actions {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    padding: $more-padding;
+    background-color: $surface-container-light;
+
+    button {
+        height: 40px;
+        background-color: $color-secondary-container-light;
+        color: $color-on-secondary-container-light;
+        border-radius: 32px;
+        padding: $less-padding;
+        border: none;
+        font-size: $label-large-font-size;
+        font-weight: 600;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: $surface-variant; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: $outline-light;
+    border-radius: 2px;
+  }

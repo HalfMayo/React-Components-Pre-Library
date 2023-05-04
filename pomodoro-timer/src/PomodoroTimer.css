@@ -1,0 +1,93 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.box {
+  width: auto;
+  position: absolute;
+  top: calc(50% - 200px);
+  left: calc(50% - 200px);
+  padding: 0;
+}
+
+.centralAlign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.setters {
+  gap: 30px;
+  flex-direction: row;
+}
+
+.setter-box {
+  background-color: #F5F0F4;
+  padding: 16px;
+  padding-bottom: 4px;
+}
+
+.horizontalSetter {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.space-h-p {
+  margin-top: 0.2rem;
+}
+
+.space-up {
+  margin-top: 32px;
+}
+
+.timer-box {
+  background-color: #F5F0F4;
+  padding: 24px;
+}
+.timer-box .space-h-p {
+  margin-top: 0.8rem;
+}
+
+.label {
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  transition-duration: 0.6s;
+  height: 48px;
+  width: 48px;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+  margin: 0;
+}
+
+.hint {
+  gap: 0.5rem;
+  align-items: self-end;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #95f1ff;
+  color: #001f24;
+  margin: 0;
+  margin-top: 8px;
+}
+.hint p {
+  margin: 0;
+  padding-bottom: 1px;
+}/*# sourceMappingURL=PomodoroTimer.css.map */

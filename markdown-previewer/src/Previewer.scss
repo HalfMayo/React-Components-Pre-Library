@@ -1,0 +1,52 @@
+@import '../../variables';
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: $body-large-font-size;
+  line-height: $body-large-line-height;
+}
+
+.app {
+    display: flex;
+    justify-content: center;
+    margin: 2.5%;
+    gap: 5%
+}
+
+.box {
+    width: 45%;
+    padding: $text-padding;
+    background-color: $surface-light;
+    border: none;
+    border-radius: $extra-small-border;
+    max-height: 500px;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.box::-webkit-scrollbar {
+    display: none;
+  }
+
+pre, code {
+    font-size: $body-medium-font-size;
+    line-height: $body-medium-line-height;
+    background-color: $surface-container-light;
+}
+
+pre {
+    padding: 10px;
+}
+
+img {
+    width: 100%;
+}

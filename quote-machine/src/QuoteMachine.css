@@ -1,0 +1,128 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.box {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  border-radius: 12px;
+}
+
+.box::before {
+  position: absolute;
+  content: "";
+  margin: 0 auto;
+  z-index: -1;
+  height: 224px;
+  width: 450px;
+  background-color: #F5F0F4;
+  border-radius: 12px;
+  transition: transform 0.7s linear;
+}
+
+.box.big-box::before {
+  transform: scaleY(1.1);
+}
+
+.box.big-big-box::before {
+  transform: scaleY(1.3);
+}
+
+#text, #author {
+  padding: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+#author {
+  padding-bottom: 32px;
+}
+
+p {
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: right;
+  gap: 16px;
+  position: relative;
+  right: 16px;
+  bottom: 38px;
+  z-index: 1;
+  transition: transform 0.7s linear;
+}
+
+.translate-buttons {
+  transform: translateY(12px);
+}
+
+.translate-more-buttons {
+  transform: translateY(34px);
+}
+
+button {
+  border: none;
+  border-radius: 32px;
+  padding: 0.5rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  width: auto;
+  background-color: #006973;
+  color: #ffffff;
+}
+
+.lesser-button {
+  background-color: #F5F0F4;
+  color: #006973;
+  border: 1px solid #79747E;
+}
+
+.fade-in {
+  animation: fadeIn 2s;
+  -webkit-animation: fadeIn 2s;
+  -moz-animation: fadeIn 2s;
+  -o-animation: fadeIn 2s;
+  -ms-animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fade-out {
+  animation: fadeOut 0.5s;
+  -webkit-animation: fadeOut 0.5s;
+  -moz-animation: fadeOut 0.5s;
+  -o-animation: fadeOut 0.5s;
+  -ms-animation: fadeOut 0.5s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}/*# sourceMappingURL=QuoteMachine.css.map */

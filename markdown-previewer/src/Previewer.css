@@ -1,0 +1,51 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  margin: 2.5%;
+  gap: 5%;
+}
+
+.box {
+  width: 45%;
+  padding: 20px;
+  background-color: #FFFBFE;
+  border: none;
+  border-radius: 4px;
+  max-height: 500px;
+  overflow: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.box::-webkit-scrollbar {
+  display: none;
+}
+
+pre, code {
+  font-size: 14px;
+  line-height: 20px;
+  background-color: #F5F0F4;
+}
+
+pre {
+  padding: 10px;
+}
+
+img {
+  width: 100%;
+}/*# sourceMappingURL=Previewer.css.map */

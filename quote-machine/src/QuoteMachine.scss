@@ -1,0 +1,162 @@
+@import '../../variables';
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.box {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  border-radius: $medium-border;
+ }
+
+.box::before {
+  position: absolute;
+  content: "";
+  margin: 0 auto;
+  z-index: -1;
+  height: 224px;
+  width: 450px;
+  background-color: $surface-container-light;
+  border-radius: $medium-border;
+  transition: transform 0.7s linear;
+  }
+
+.box.big-box::before {
+  transform: scaleY(1.1);
+}
+
+.box.big-big-box::before {
+    transform: scaleY(1.3);
+  }
+
+#text, #author {
+    padding: $padding;
+    padding-left: calc($less-padding * 2);
+    padding-right: calc($less-padding * 2);
+}
+
+#author {
+    padding-bottom: calc($padding * 2);
+}
+
+p {
+    margin: 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: right;
+  gap: $padding;
+  position: relative;
+  right: $padding;
+  bottom: 38px;
+  z-index: 1;
+  transition: transform 0.7s linear;
+}
+
+.translate-buttons {
+    transform: translateY(12px);
+}
+
+.translate-more-buttons {
+    transform: translateY(34px);
+}
+
+button {
+  border: none;
+  border-radius: 32px;
+  padding: 0.5rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  width: auto;
+  background-color: $color-primary-light;
+  color: $color-on-primary-light;
+}
+
+.lesser-button {
+    background-color: $surface-container-light;
+    color: $color-primary-light;
+    border: 1px solid $outline-light;
+}
+
+.fade-in {
+  animation: fadeIn 2s;
+  -webkit-animation: fadeIn 2s;
+  -moz-animation: fadeIn 2s;
+  -o-animation: fadeIn 2s;
+  -ms-animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s;
+  -webkit-animation: fadeOut 0.5s;
+  -moz-animation: fadeOut 0.5s;
+  -o-animation: fadeOut 0.5s;
+  -ms-animation: fadeOut 0.5s;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-moz-keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-webkit-keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-o-keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-ms-keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}

@@ -1,0 +1,326 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.app {
+  position: absolute;
+  top: calc(50% - 150px);
+  left: calc(50% - 150px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #FFFBFE;
+  height: auto;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+p {
+  font-size: 14px;
+  transform: none;
+}
+
+.navigateLists {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background-color: #FFFBFE;
+  width: 100%;
+  height: 48px;
+  border-bottom: 1px solid #E7E0EC;
+}
+.navigateLists button {
+  background-color: transparent;
+  border: none;
+  height: 48px;
+  color: #49454F;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.navigateLists .active {
+  padding-top: 3px;
+  padding-bottom: 0px;
+  color: #006973;
+  border-bottom: 3px solid #006973;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  list-style: none;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  border: none;
+  background-color: #FFFBFE;
+  width: calc(100% - 48px);
+  height: 60px;
+  padding: 16px;
+  font-size: 22px;
+  line-height: 28px;
+  margin-top: 8px;
+}
+
+.submit, .submitTitle {
+  border: none;
+  background-color: #FFFBFE;
+  width: 48px;
+  height: 72px;
+  padding: 6px;
+}
+
+.submitTitle {
+  margin-top: 8px;
+}
+
+.saved-bg {
+  fill: #006973;
+}
+
+.saved-tick {
+  fill: #ffffff;
+}
+
+.submit {
+  background-color: #F5F0F4;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding: 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkbox {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  height: 18px;
+  width: 18px;
+  background-color: #FFFBFE;
+  border: 2px solid #79747E;
+  border-radius: 2px;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkbox:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkbox:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+form {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+textarea {
+  width: calc(100% - 48px);
+  height: 72px;
+  border: none;
+  background-color: #F5F0F4;
+  padding: 12px;
+  font-family: "Roboto", sans-serif;
+  resize: none;
+  margin: 0;
+}
+
+.edit {
+  display: flex;
+  padding: 0;
+}
+
+.item-to-do {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  width: 100%;
+  color: black;
+  padding: 16px;
+}
+
+.text {
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  width: 100%;
+  padding: 0;
+}
+
+.item-done {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: auto;
+  width: 100%;
+  padding: 12px;
+  background-color: transparent;
+  color: grey;
+}
+.item-done p {
+  margin: 0;
+  padding: 12px;
+}
+
+p, .task {
+  word-wrap: break-word;
+}
+
+.task {
+  margin: 0;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.show {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  top: calc(50% - 40px);
+  left: calc(50% - 72px);
+}
+.show button {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  background-color: #E7E0EC;
+  border-radius: 50%;
+  border: none;
+}
+
+.hide {
+  display: none;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 5;
+  width: 376px;
+  height: 100%;
+  background-color: #FFFBFE;
+  opacity: 90%;
+}
+
+.path-color {
+  fill: #006973;
+}
+
+.active-actions {
+  position: sticky;
+  bottom: 0;
+  background-color: #F5F0F4;
+  width: 400px;
+  padding: 20px;
+}
+.active-actions p {
+  margin: 0;
+}
+
+.completed-actions {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+  padding: 20px;
+  background-color: #F5F0F4;
+}
+.completed-actions button {
+  height: 40px;
+  background-color: #cde7ec;
+  color: #051f23;
+  border-radius: 32px;
+  padding: 12px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E7E0EC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #79747E;
+  border-radius: 2px;
+}/*# sourceMappingURL=ToDo.css.map */

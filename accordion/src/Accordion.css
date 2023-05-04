@@ -1,0 +1,71 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  width: 100%;
+}
+
+.show-border {
+  border-bottom: 1px solid #D0C9D4;
+}
+
+ul {
+  list-style-type: none;
+  width: 600px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+}
+
+.question-box {
+  background-color: #F5F0F4;
+  padding: 16px;
+}
+
+.longText-box {
+  background-color: #FFFBFE;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.7s linear;
+}
+
+.longText-inner {
+  padding: 16px;
+}
+
+.show {
+  max-height: 300px;
+  transition: max-height 1s linear;
+}
+
+.down {
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
+  transition: all 0.5s;
+}
+
+.right {
+  transform: rotate(0deg);
+  transform-origin: 50% 50%;
+  transition: all 0.5s;
+}/*# sourceMappingURL=Accordion.css.map */

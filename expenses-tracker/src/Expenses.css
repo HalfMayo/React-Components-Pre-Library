@@ -1,0 +1,192 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, button, input {
+  font-family: "Roboto", sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-container {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.indicator {
+  position: relative;
+}
+
+.wrapper, .slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  margin: 2rem;
+  gap: 16px;
+}
+
+.remaining {
+  margin-left: 3rem;
+}
+
+output {
+  transform: translateX(-40%);
+  position: absolute;
+  top: -180%;
+  left: 50%;
+  color: #ffffff;
+}
+
+output::before {
+  position: absolute;
+  content: "";
+  background-color: #006973;
+  border-radius: 50% 50% 0 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: -25%;
+  left: 50%;
+  padding: 12px;
+  transform-origin: bottom center;
+  transform: translateX(-90%) scale(1.2) rotate(45deg);
+  transition: all linear 0.15s;
+  z-index: -1;
+}
+
+output.two-digits::before {
+  top: -20%;
+  transform: translateX(-95%) scale(1.3) rotate(45deg);
+}
+
+output.three-digits {
+  top: -185%;
+}
+
+output.three-digits::before {
+  top: -10%;
+  transform: translateX(-103%) scale(1.5) rotate(45deg);
+}
+
+output.three-digits {
+  top: -200%;
+}
+
+output.four-digits::before {
+  top: -7%;
+  transform: translateX(-113%) scale(1.8) rotate(45deg);
+}
+
+output.four-digits {
+  top: -215%;
+}
+
+output.five-digits::before {
+  top: 15%;
+  transform: translateX(-121%) scale(2.1) rotate(45deg);
+}
+
+output.five-digits {
+  top: -250%;
+}
+
+button {
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  border: none;
+}
+
+/*Range Reset*/
+input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  background: linear-gradient(to right, #006973 50%, #F5F0F4 50%);
+  cursor: pointer;
+  width: 200px;
+  border-radius: 0.5rem;
+}
+
+/* Removes default focus */
+input[type=range]:focus {
+  outline: none;
+}
+
+/***** Chrome, Safari, Opera and Edge Chromium styles *****/
+/* slider track */
+input[type=range]::-webkit-slider-runnable-track {
+  height: 0.3rem;
+}
+
+/* slider thumb */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -7.2px; /* Centers thumb on the track */
+  /*custom styles*/
+  background-color: #006973;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+}
+
+input[type=range]:focus::-webkit-slider-thumb {
+  background-color: #006973;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px rgba(0, 105, 115, 0.3);
+}
+
+/******** Firefox styles ********/
+/* slider track */
+input[type=range]::-moz-range-track {
+  height: 0.3rem;
+}
+
+/* slider thumb */
+input[type=range]::-moz-range-thumb {
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 0; /*Removes default border-radius that FF applies*/
+  /*custom styles*/
+  background-color: #006973;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+}
+
+input[type=range]:focus::-moz-range-thumb {
+  background-color: #006973;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px rgba(0, 105, 115, 0.3);
+}
+
+.greyed-out input[type=range]::-webkit-slider-thumb {
+  background-color: #D0C9D4;
+}
+.greyed-out input[type=range]::-moz-range-thumb {
+  background-color: #D0C9D4;
+}
+.greyed-out output {
+  color: #1C1B1F;
+}
+.greyed-out output::before {
+  background-color: #D0C9D4;
+}/*# sourceMappingURL=Expenses.css.map */

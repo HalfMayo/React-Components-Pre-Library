@@ -1,0 +1,206 @@
+@import '../../variables';
+
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body, button, input {
+    font-family: 'Roboto', sans-serif;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+    background-color: $surface-light;
+}
+
+.search-bar {
+    margin-top: 22px;
+    height: 56px;
+    width: 360px;
+    display: flex;
+    padding: $padding;
+    justify-content: center;
+    align-items: center;
+    gap: $padding;
+    background-color: $surface-container-high;
+    border-radius: 32px;
+
+    input {
+        width: 264px;
+        border: none;
+        padding: 4px;
+        background-color: transparent;
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: $on-surface-light;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:focus {
+    outline: transparent;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    height: $touch-element-size;
+    width: $touch-element-size;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: $surface-light;
+}
+
+.search-result {
+    width: 400px;
+    height: 88px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $surface-variant;
+}
+
+img {
+    height: 56px;
+    width: 56px;
+    margin: $half-padding $padding $half-padding $half-padding;
+    object-fit: cover;
+}
+
+p {
+    margin: 0;
+}
+
+.briefInfo {
+    width: 224px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: $half-padding;
+}
+
+.title {
+    font-size: 16px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: $on-surface-light;
+}
+
+.author {
+    font-size: 14px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    color: $on-surface-variant-light;
+}
+
+.title-ext, .author-ext, .date, .plot {
+    font-size: 14px;
+    width: 360px;
+    color: $on-surface-variant-light;
+}
+
+.moved {
+    height: auto;
+    max-height: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: $surface-container-light;
+    transition: max-height 0.4s linear;
+}
+
+.pad {
+    padding: $padding;
+}
+
+.dots {
+    width: $touch-element-size;
+    height: $touch-element-size;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin-right: calc($less-padding * 2);
+    margin-left: $padding;
+}
+
+.navigation {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        color: $on-surface-light;
+    }
+}
+
+.nav-button {
+    width: $touch-element-size;
+    height: $touch-element-size;
+    background-color: transparent;
+    border: none;
+    margin-top: 3px;
+    margin-left: $half-padding;
+    margin-right: $half-padding;
+}
+
+.icon {
+    fill: $on-surface-variant-light;
+}
+
+.show {
+    max-height: 150px;
+    overflow-y: scroll;
+    transition: max-height 0.4s linear;
+}
+
+.hide {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: $surface-variant; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: $outline-light;
+    border-radius: 2px;
+  }

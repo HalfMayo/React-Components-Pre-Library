@@ -1,0 +1,97 @@
+@import '../../variables';
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    font-size: $headline-large-font-size;
+    line-height: $headline-large-line-height;
+    font-weight: $font-weight;
+    margin-bottom: $padding;
+}
+
+h3 {
+    font-size: $title-large-font-size;
+    line-height: $title-large-line-height;
+    font-weight: $font-weight;
+    margin-top: 0;
+    margin-bottom: $padding;
+}
+
+p {
+    font-size: $body-medium-font-size;
+    line-height: $body-medium-line-height;
+    margin-top: 0;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    gap: $padding;
+}
+
+ul {
+    list-style-type: none;
+    width: 540px;
+    overflow: hidden;
+    padding: 0;
+
+    .cards-wrapper {
+        display: flex;
+        justify-items: center;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+button {
+    width: $touch-element-size;
+    height: $touch-element-size;
+    background-color: transparent;
+    border: none;
+}
+
+.nav-icon {
+    fill: $on-surface-variant-light;
+}
+
+button:hover {
+    .nav-icon {
+    fill: $color-primary-light;
+    }
+}
+
+.card-container {
+
+    width: 500px;
+    height: auto;
+    margin-right: $more-padding;
+    margin-left: $more-padding;
+    border-radius: $medium-border;
+    background-color: $surface-container-highest-light;
+
+    img {
+        width: 100%;
+        border-top-right-radius: $medium-border;
+        border-top-left-radius: $medium-border;
+    }
+}
+
+.card-text {
+    padding-right: $padding;
+    padding-left: $padding;
+    padding-bottom: $more-padding;
+    width: 80%;
+}
+
+.transition {
+    transition: all 1.0s;
+}

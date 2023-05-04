@@ -1,0 +1,472 @@
+@import '../../variables';
+
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  * {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+  
+  body {
+    margin: 0;
+  }
+
+.box {
+    width: 400px;
+    border-radius: $medium-border;
+    position: absolute;
+    top: 7.5%;
+    left: calc(50% - 200px)
+}
+
+.order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: $more-padding;
+    padding-top: 0;
+}
+
+.card-top {
+    position: relative;
+}
+
+img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: 0 15%;
+    border-top-right-radius: $medium-border;
+    border-top-left-radius: $medium-border;
+}
+
+.overlay {
+    position: absolute;
+    right: $half-padding;
+    bottom: $half-padding;
+    margin: 0;
+}
+
+.margins {
+    padding: $padding $padding $more-padding $padding;
+}
+
+.more-margins {
+    padding-top: calc($less-padding * 2);
+    padding-bottom: 28px;
+    text-align: center;
+}
+
+h2, h3 {
+    margin: 0;
+    padding-bottom: $padding;
+}
+
+h2 {
+    font-size: $headline-large-font-size;
+    line-height: $headline-large-line-height;
+    font-weight: $font-weight;
+}
+
+h3 {
+    font-size: $title-large-font-size;
+    line-height: $title-large-line-height;
+    font-weight: $font-weight;
+}
+
+p, label {
+    font-size: $body-medium-font-size;
+    line-height: $body-medium-line-height;
+    margin: 0;
+}
+
+.mood-button {
+    background-color: transparent;
+    border: none;
+}
+
+.hide {
+    display: none;
+}
+
+.example-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    gap: $half-padding;
+
+    
+    textarea {
+        height: 90px;
+        width: 90%;
+        margin: $padding 0;
+        border: none;
+        resize: none;
+        padding: $half-padding;
+    }
+
+    textarea:focus {
+        outline: 0;
+    }
+
+    button {
+        width: $touch-element-size;
+        height: $touch-element-size;
+        background-color: transparent;
+        border: none;
+    }
+}
+
+.daytype {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: $less-padding;
+    margin: $half-padding 0;
+
+    p {
+        width: 100%;
+    }
+}
+
+.boxes {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 26px;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: $half-padding;
+}
+
+.action {
+    width: auto;
+    border: none;
+    border-radius: 32px;
+    padding: $half-padding;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    font-weight: 500;
+}
+
+.neutral {
+    background-color: $surface-light;
+
+    .face {
+        fill: $surface-light;
+    }
+
+    .face-shadow {
+        fill: #DCD7DB;
+    }
+
+    .feature {
+        fill: $on-surface-light;
+    }
+}
+
+.enthusiast {
+    background-color: $color-primary-container-light;
+
+    h2, h3, p, textarea {
+        color: $color-on-primary-container-light;
+    }
+
+    textarea {
+        background-color: #cff8ff;
+    }
+
+    .face {
+        fill: $color-primary-container-light;
+    }
+
+    .face-shadow {
+        fill: #4fd8ea;
+    }
+
+    .feature {
+        fill: $color-primary-light;
+    }
+
+    input:checked ~ .checkbox {
+        background-color: $color-primary-light;
+    }
+
+    .outlined {
+        border: 1px solid $color-primary-light;
+        background-color: transparent;
+        color: $color-primary-light;
+    }
+
+    .filled {
+        border: 1px solid $color-primary-light;
+        background-color: $color-primary-light;
+        color: $color-on-primary-light;
+    }
+}
+
+.serene {
+    background-color: $color-tertiary-container-light;
+
+    h2, h3, p, textarea {
+        color: $color-on-tertiary-container-light;
+    }
+
+    textarea {
+        background-color: #ffecef;
+    }
+
+    .face {
+        fill: $color-tertiary-container-light;
+    }
+
+    .face-shadow {
+        fill: #ffb1c7;
+    }
+
+    .feature {
+        fill: $color-tertiary-light;
+    }
+
+    input:checked ~ .checkbox {
+        background-color: $color-tertiary-light;
+    }
+
+    .outlined {
+        border: 1px solid $color-tertiary-light;
+        background-color: transparent;
+        color: $color-tertiary-light;
+    }
+
+    .filled {
+        border: 1px solid $color-tertiary-light;
+        background-color: $color-tertiary-light;
+        color: $color-on-tertiary-light;
+    }
+}
+
+.gloomy {
+    background-color: $color-secondary-container-light;
+
+    h2, h3, p, textarea {
+        color: $color-on-secondary-container-light;
+    }
+
+    textarea {
+        background-color: #dbf6fa;
+    }
+
+    .face {
+        fill: $color-secondary-container-light;
+    }
+
+    .face-shadow {
+        fill: #b1cbd0;
+    }
+
+    .feature {
+        fill: $color-secondary-light;
+    }
+
+    input:checked ~ .checkbox {
+            background-color: $color-secondary-light;
+        }
+
+    .outlined {
+        border: 1px solid $color-secondary-light;
+        background-color: transparent;
+        color: $color-secondary-light;
+    }
+
+    .filled {
+        border: 1px solid $color-secondary-light;
+        background-color: $color-secondary-light;
+        color: $color-on-secondary-light;
+    }
+}
+
+.grumpy {
+    background-color: $color-error-container-light;
+
+    h2, h3, p, textarea {
+        color: $color-on-error-container-light;
+    }
+
+    textarea {
+        background-color: #ffedea;
+    }
+
+    .face {
+        fill: $color-error-container-light;
+    }
+
+    .face-shadow {
+        fill: #ffb4ab;
+    }
+
+    .feature {
+        fill: $color-error-light;
+    }
+
+    input:checked ~ .checkbox {
+        background-color: $color-error-light;
+    }
+
+    .outlined {
+        border: 1px solid $color-error-light;
+        background-color: transparent;
+        color: $color-error-light;
+    }
+
+    .filled {
+        border: 1px solid $color-error-light;
+        background-color: $color-error-light;
+        color: $color-on-error-light;
+    }
+}
+
+.bored {
+    background-color: $surface-variant;
+
+    h2, h3, p, textarea {
+        color: $on-surface-variant-light;
+    }
+
+    textarea {
+        background-color: $surface-container-high;
+    }
+
+    .face {
+        fill: $surface-variant;
+    }
+
+    .face-shadow {
+        fill: $surface-variant-low;
+    }
+
+    .feature {
+        fill: $on-surface-variant-light;
+    }
+
+    input:checked ~ .checkbox {
+        background-color: $on-surface-variant-light;
+    }
+
+    .outlined {
+        border: 1px solid $on-surface-variant-light;
+        background-color: transparent;
+        color: $on-surface-variant-light;
+    }
+
+    .filled {
+        border: 1px solid $on-surface-variant-light;
+        background-color: $on-surface-variant-light;
+        color: #ffffff;
+    }
+}
+
+.mood-enthusiast, .mood-serene, .mood-gloomy, .mood-grumpy, .mood-bored {
+    .face {
+        fill: $surface-light;
+    }
+
+    .face-shadow {
+        fill: #DCD7DB;
+    }
+
+    .feature {
+        fill: $on-surface-light;
+    }
+}
+
+.checkbox-container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: $half-padding;
+    padding-left: 26px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkbox {
+    position: absolute;
+    top: 0;
+    left: 2px;
+    height: 18px;
+    width: 18px;
+    background-color: $surface-light;
+    border: 2px solid $outline-light;
+    border-radius: 2px;
+  }
+
+  /* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkbox {
+    border: none;
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+.checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .checkbox-container input:checked ~ .checkbox:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .checkbox-container .checkbox:after {
+    top: 2px;
+    left: 6px;
+    width: 6px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: $surface-variant; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: $outline-light;
+    border-radius: 2px;
+  }
